@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Remove stopped containers') {
+            steps {
+                sh 'docker-compose rm'
+            }
+        }
+        stage('get codes from Github') {
+            steps {
+                git 'https://github.com/mohsadki/automation.git'
+            }
+        }    
+        stage('build the environment with docker-compose ') {
+            steps {
+                sh "docker-compose up -d"
+            }
+        }
+    }
+}
