@@ -18,7 +18,7 @@ RUN pecl install xdebug-3.1.0 \
 
 RUN echo "hostname=localhost.localdomain" > /etc/msmtp/msmtp.conf \
     && echo "root=root@localhost" >> /etc/msmtp/msmtp.conf \
-    && echo "mailhub=maildev" >> /etc/msmtp /msmtp.conf \
+    && echo "mailhub=maildev" >> /etc/msmtp/msmtp.conf \
     && echo "sendmail_path=sendmail -i -t" >> /usr/local/etc/php/conf.d/php-sendmail.ini
 
 RUN echo "[Date]" >> /usr/local/etc/php/conf.d/php-sendmail.ini \
