@@ -1,6 +1,6 @@
 # see https://github.com/cmaessen/docker-php-sendmail for more information
 
-FROM php:8-fpm
+FROM php:8
 
 RUN apt-get update && apt-get install -q -y ssmtp mailutils && rm -rf /var/lib/apt/lists/*
 
