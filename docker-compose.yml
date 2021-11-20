@@ -5,6 +5,8 @@ web:
   volumes:
     - ./code:/code
     - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    - ./log/error.log:/etc/nginx/log/error.log
+    - ./log/access.log:/etc/nginx/log/access.log
   links:
     - php
 
