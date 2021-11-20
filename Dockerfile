@@ -16,10 +16,10 @@ RUN pecl install xdebug-3.1.0 \
     && echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/xdebug.ini \
     && echo "xdebug.remote_autostart=on" >> /usr/local/etc/php/conf.d/xdebug.ini
 
-RUN echo "hostname=localhost.localdomain" > /etc/msmtp/msmtp.conf \
-    && echo "root=root@localhost" >> /etc/msmtp/msmtp.conf \
-    && echo "mailhub=maildev" >> /etc/msmtp/msmtp.conf \
-    && echo "sendmail_path=sendmail -i -t" >> /usr/local/etc/php/conf.d/php-sendmail.ini
+#RUN echo "hostname=localhost.localdomain" > /etc/msmtp/msmtp.conf \
+#    && echo "root=root@localhost" >> /etc/msmtp/msmtp.conf \
+#    && echo "mailhub=maildev" >> /etc/msmtp/msmtp.conf \
+#    && echo "sendmail_path=sendmail -i -t" >> /usr/local/etc/php/conf.d/php-sendmail.ini
 
 RUN echo "[Date]" >> /usr/local/etc/php/conf.d/php-sendmail.ini \
     && echo "date.timezone = Europe/Amsterdam" >> /usr/local/etc/php/conf.d/php-sendmail.ini
