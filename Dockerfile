@@ -1,5 +1,5 @@
 # see https://github.com/cmaessen/docker-php-sendmail for more information
-
+sfhgh
 FROM php:7.4.0-fpm
 
 RUN apt-get update && apt-get install -q -y ssmtp mailutils && rm -rf /var/lib/apt/lists/*
