@@ -1,6 +1,6 @@
 # see https://github.com/cmaessen/docker-php-sendmail for more information
 
-FROM php:7.4.0-fpm
+FROM php:php7.2-intl
 
 RUN apt-get update && apt-get install -q -y msmtp mailutils && rm -rf /var/lib/apt/lists/*
 
