@@ -2,17 +2,22 @@ pipeline {
     agent any
 
     stages {
-        stage('Remove stopped containers') {
+        stage('docker-compose down : Stop and remove containers, networks, images, and volumes') {
             steps {
-                sh 'docker-compose rm'
+                sh 'docker-compose down'
             }
         }
         stage('get codes from Github') {
             steps {
-                git 'https://github.com/mohsadki/automation.git'
+                git 'https://github.com/mohsadki/p2111.git'
             }
         }    
-        stage('build the environment with docker-compose ') {
+        stage('docker-compose build: Create and start containers') {
+            steps {
+                sh "docker-compose build"
+            }
+        }
+        stage('docker-compose up: start containers') {
             steps {
                 sh "docker-compose up -d"
             }
