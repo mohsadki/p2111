@@ -1,10 +1,10 @@
 # see https://github.com/cmaessen/docker-php-sendmail for more information
 
-FROM php:php7.2-intl
+FROM php:7.4.0-fpm
 
 RUN apt-get update && apt-get install -q -y msmtp mailutils && rm -rf /var/lib/apt/lists/*
 
-RUN docker-php-ext-install mysqli sysvsem
+RUN docker-php-ext-install mysqli sysvsem intl
 
 RUN echo "extension=intl" >> /usr/local/etc/php/php.ini-development  
 RUN echo "extension=intl" >> /usr/local/etc/php/php.ini-production
